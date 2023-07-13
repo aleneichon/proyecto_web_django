@@ -1,0 +1,66 @@
+
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        
+    </head>
+    <body>
+        <div class="container-dios">
+            <div class="cabezar">
+                
+                <div id="container1">
+                    <ul>
+                        <li><a href="{% url 'post_list' %}">MENU PRINCIPAL</a></li>
+                        <a href="{% url 'post_new' %}" class="top-menu"><span><h1>NUEVO POST</h1></span></a>
+                    </ul>
+                </div>   
+            </div>
+            <div class="containeruleta">
+                <div class="carrusel" id="carrusel-1">
+                    <div class="fondocarrusel" id="item-1">
+                        <img src="blog/templates/cn.jpeg"> 
+                    </div>
+                    <div class="flechas">
+                        <a href="#carrusel-3"> <i><</i> </a>
+                        <a href="#carrusel-2"> <i>></i> </a>                    
+                    </div>
+                </div>
+                <div class="carrusel" id="carrusel-2">
+                    <div class="fondocarrusel" id="item-2">
+                        <img src="blog/templates/ficha-gatitos.jpeg"> 
+                    </div>
+                    <div class="flechas">
+                        <a href="#carrusel-1"> <i><</i> </a>
+                        <a href="#carrusel-3"> <i>></i> </a>
+                    </div>
+                </div>
+                <div class="carrusel" id="carrusel-3">
+                    <div class="fondocarrusel" id="item-3">
+                        <img src="blog/templates/ficha-perritos.jpeg"> 
+                    </div>
+                    <div class="flechas">
+                        <a href="#carrusel-2"> <i><</i> </a>
+                        <a href="#carrusel-1"> <i>></i> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="lll"><h1>NOTICIOAS</h1></div>
+            
+          
+            <div class="content container">
+                
+                    <div class="container2">
+                    {% block content %}
+                    {% endblock %}
+                    </div>
+                    
+               
+            </div>
+        </div>
+    </body>
+</html>
