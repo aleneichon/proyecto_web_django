@@ -3,6 +3,13 @@ from .models import Post
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
+<<<<<<< HEAD
+=======
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+
+>>>>>>> 2a24358cbeed6e98fb07b4dac7b4b79ad29addf3
 
 # Create your views here.
 def post_list(request):
@@ -40,4 +47,22 @@ def post_edit(request, pk):
                 return redirect('post_detail', pk=post.pk)
         else:
             form = PostForm(instance=post)
+<<<<<<< HEAD
         return render(request, 'blog/post_edit.html', {'form': form})
+=======
+        return render(request, 'blog/post_edit.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        email = request.POST['email']
+
+        user = User.objects.create_user(username=username, password=password, email=email)
+
+        if user is not None:
+            login(request, user)
+            return redirect('post_list')
+
+    return render(request, 'blog/login.html')
+>>>>>>> 2a24358cbeed6e98fb07b4dac7b4b79ad29addf3

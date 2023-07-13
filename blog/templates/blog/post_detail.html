@@ -5,9 +5,26 @@
         {% if post.published_date %}
          
         {% endif %}
+<<<<<<< HEAD
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
         {{ post.published_date }}
+=======
+        <div id="tituloo"><h2 style="padding: 10px;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                                    font-size: 50px;">{{ post.title }}</h2> </div>
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <div id="container-noticia">
+            <div id="imageen"> imagen</div>
+            <div id="contenidoo">
+                <h2 id="notitulo" style="font-size: 25px;">AUTOR: {{ post.author }}</h2> 
+                <h2 id="nofecha" style="font-size: 25px;">FECHA: {{ post.published_date }}</h2> <br>
+                <p style="font-size: 20px;">{{ post.text|linebreaksbr }}</p>
+            </div>
+        </div>
+>>>>>>> 2a24358cbeed6e98fb07b4dac7b4b79ad29addf3
     </div>
 {% endblock %}

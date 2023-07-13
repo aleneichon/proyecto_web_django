@@ -2,7 +2,12 @@
 
 {% block content %}
     <h2>NUEVO POST</h2>
+<<<<<<< HEAD
     <form method="POST" class="post-form">{% csrf_token %}
+=======
+    <form method="POST" style="color: black;" class="post-form">{% csrf_token %}
+        
+>>>>>>> 2a24358cbeed6e98fb07b4dac7b4b79ad29addf3
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">MANDAR</button>
     </form>
